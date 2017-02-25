@@ -17,13 +17,11 @@ import java.sql.Statement;
  */
 
 
-//feature generation using association mining using FPGrowth algorithm for strings
 public class helppython2fpgrowth {
     // JDBC driver name and database URL
     static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
     static final String DB_URL = "jdbc:mysql://localhost/other";
 
-    // Database credentials
     static final String USER = "root";
     static final String PASS = "123456";
 
@@ -51,10 +49,9 @@ public class helppython2fpgrowth {
             String input = "C:/developement/python/EvaluationAnalysis/featureset/"
                     + category + ".txt";
 
-            double minsup = 0.01; // MINIMUM SUPPORT which the paper has used
+            double minsup = 0.005; // MINIMUM SUPPORT which the paper has used
             // i.e. 1%
 
-            // Applying the FPGROWTH algorithmMainTestFPGrowth.java
             AlgoFPGrowth_Strings algo = new AlgoFPGrowth_Strings();
             algo.runAlgorithm(input, output, minsup);
             algo.printStats();
